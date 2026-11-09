@@ -1,0 +1,90 @@
+services:
+  mongo:
+    image: mongo:7.0.24
+    command: [mongod, --replSet, rs0, --bind_ip_all]
+    ports:
+      - '127.0.0.1:${MONGO_PORT:-27018}:27017'
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test:
+        [
+          CMD,
+          mongosh,
+          --quiet,
+          --eval,
+          'quit(db.adminCommand({ ping: 1 }).ok ? 0 : 1)',
+        ]
+      interval: 2s
+      timeout: 5s
+      retries: 30
+
+  mongo-init:
+    image: mongo:7.0.24
+    depends_on:
+      mongo:
+        condition: service_healthy
+    volumes:
+      - ./docker/init-replica.js:/init-replica.js:ro
+    entrypoint: [mongosh, --quiet, --host, 'mongo:27017', /init-replica.js]
+    restart: 'no'
+
+  app:
+    build:
+      context: .
+      target: runtime
+    init: true
+    depends_on:
+      mongo-init:
+        condition: service_completed_successfully
+    environment:
+      MONGODB_URI: mongodb://mongo:27017/?replicaSet=rs0
+      MONGODB_DATABASE: ingest
+      WORKER_CONCURRENCY: ${WORKER_CONCURRENCY:-128}
+      PROCESSING_DELAY_MS: ${PROCESSING_DELAY_MS:-5000}
+      PROCESSING_TIMEOUT_MS: ${PROCESSING_TIMEOUT_MS:-15000}
+    ports:
+      - '127.0.0.1:${APP_PORT:-3000}:3000'
+    stop_grace_period: 20s
+    healthcheck:
+      test:
+        [
+          CMD,
+          node,
+          -e,
+          "fetch('http://127.0.0.1:3000/health/ready').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+
+  verify:
+    profiles: [tools]
+    build:
+      context: .
+      target: verification
+    init: true
+    depends_on:
+      mongo-init:
+        condition: service_completed_successfully
+    environment:
+      TEST_MONGODB_URI: mongodb://mongo:27017/?replicaSet=rs0
+
+  load:
+    profiles: [tools]
+    build:
+      context: .
+      target: verification
+    init: true
+    command: [pnpm, load]
+    depends_on:
+      app:
+        condition: service_healthy
+    environment:
+      BASE_URL: http://app:3000
+      DURATION_SECONDS: ${DURATION_SECONDS:-600}
+      EVENTS_PER_MINUTE: ${EVENTS_PER_MINUTE:-1000}
+      PATIENTS: ${PATIENTS:-256}
+
+volumes:
+  mongo-data:
