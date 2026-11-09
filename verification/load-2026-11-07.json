@@ -1,0 +1,316 @@
+{
+  "date": "2026-11-07",
+  "runtimeSourceCommit": "f6ecaff",
+  "toolingCommit": "15890e5",
+  "environment": {
+    "node": "v24.22.2",
+    "mongodb": "7.0.24",
+    "architecture": "x64",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "logicalCpus": 8,
+    "memoryGiB": 15,
+    "workerConcurrency": 128,
+    "processingDelayMs": 5000,
+    "patientCount": 256,
+    "instances": 1
+  },
+  "result": {
+    "event": "load_result",
+    "run": "637c4c70-38ec-43cf-bf05-e467be526bdb",
+    "requestedDurationSeconds": 600,
+    "offeredSeconds": 599.94728861,
+    "targetEventsPerMinute": 1000,
+    "offeredEventsPerMinute": 1000.0878600353743,
+    "accepted": 10000,
+    "duplicates": 1000,
+    "processed": 10000,
+    "pending": 0,
+    "acceptanceP50Ms": 6.750075999996625,
+    "acceptanceP95Ms": 19.292246000026353,
+    "minimumSampledCompletionMs": 5036,
+    "steadyStateAssessed": true,
+    "backlogSlopeEventsPerMinute": 0.10249431936311791,
+    "failures": []
+  },
+  "samples": [
+    {
+      "event": "load_sample",
+      "seconds": 15.139373587,
+      "accepted": 252,
+      "processed": 165,
+      "pending": 85
+    },
+    {
+      "event": "load_sample",
+      "seconds": 30.25193509,
+      "accepted": 504,
+      "processed": 419,
+      "pending": 85
+    },
+    {
+      "event": "load_sample",
+      "seconds": 45.345277567,
+      "accepted": 756,
+      "processed": 670,
+      "pending": 86
+    },
+    {
+      "event": "load_sample",
+      "seconds": 60.426676332,
+      "accepted": 1007,
+      "processed": 922,
+      "pending": 85
+    },
+    {
+      "event": "load_sample",
+      "seconds": 75.50282861900001,
+      "accepted": 1259,
+      "processed": 1173,
+      "pending": 86
+    },
+    {
+      "event": "load_sample",
+      "seconds": 90.607614621,
+      "accepted": 1510,
+      "processed": 1426,
+      "pending": 84
+    },
+    {
+      "event": "load_sample",
+      "seconds": 105.693800327,
+      "accepted": 1762,
+      "processed": 1676,
+      "pending": 86
+    },
+    {
+      "event": "load_sample",
+      "seconds": 120.77286494699999,
+      "accepted": 2013,
+      "processed": 1929,
+      "pending": 84
+    },
+    {
+      "event": "load_sample",
+      "seconds": 135.860458658,
+      "accepted": 2265,
+      "processed": 2176,
+      "pending": 88
+    },
+    {
+      "event": "load_sample",
+      "seconds": 150.94992940699998,
+      "accepted": 2516,
+      "processed": 2429,
+      "pending": 87
+    },
+    {
+      "event": "load_sample",
+      "seconds": 166.028598104,
+      "accepted": 2767,
+      "processed": 2682,
+      "pending": 85
+    },
+    {
+      "event": "load_sample",
+      "seconds": 181.103931161,
+      "accepted": 3019,
+      "processed": 2932,
+      "pending": 87
+    },
+    {
+      "event": "load_sample",
+      "seconds": 196.177529575,
+      "accepted": 3270,
+      "processed": 3183,
+      "pending": 87
+    },
+    {
+      "event": "load_sample",
+      "seconds": 211.262139634,
+      "accepted": 3521,
+      "processed": 3433,
+      "pending": 88
+    },
+    {
+      "event": "load_sample",
+      "seconds": 226.332943484,
+      "accepted": 3773,
+      "processed": 3685,
+      "pending": 87
+    },
+    {
+      "event": "load_sample",
+      "seconds": 241.43454031899998,
+      "accepted": 4024,
+      "processed": 3936,
+      "pending": 87
+    },
+    {
+      "event": "load_sample",
+      "seconds": 256.499257839,
+      "accepted": 4275,
+      "processed": 4191,
+      "pending": 84
+    },
+    {
+      "event": "load_sample",
+      "seconds": 271.568589289,
+      "accepted": 4526,
+      "processed": 4440,
+      "pending": 86
+    },
+    {
+      "event": "load_sample",
+      "seconds": 286.64237062199993,
+      "accepted": 4777,
+      "processed": 4693,
+      "pending": 84
+    },
+    {
+      "event": "load_sample",
+      "seconds": 301.723578192,
+      "accepted": 5029,
+      "processed": 4944,
+      "pending": 84
+    },
+    {
+      "event": "load_sample",
+      "seconds": 316.83042319899994,
+      "accepted": 5281,
+      "processed": 5195,
+      "pending": 85
+    },
+    {
+      "event": "load_sample",
+      "seconds": 331.90752037799996,
+      "accepted": 5532,
+      "processed": 5445,
+      "pending": 86
+    },
+    {
+      "event": "load_sample",
+      "seconds": 346.98218929099994,
+      "accepted": 5783,
+      "processed": 5696,
+      "pending": 87
+    },
+    {
+      "event": "load_sample",
+      "seconds": 362.06845690899996,
+      "accepted": 6035,
+      "processed": 5946,
+      "pending": 88
+    },
+    {
+      "event": "load_sample",
+      "seconds": 377.142772591,
+      "accepted": 6286,
+      "processed": 6199,
+      "pending": 86
+    },
+    {
+      "event": "load_sample",
+      "seconds": 392.209123064,
+      "accepted": 6537,
+      "processed": 6450,
+      "pending": 87
+    },
+    {
+      "event": "load_sample",
+      "seconds": 407.272469453,
+      "accepted": 6788,
+      "processed": 6702,
+      "pending": 86
+    },
+    {
+      "event": "load_sample",
+      "seconds": 422.350223947,
+      "accepted": 7040,
+      "processed": 6951,
+      "pending": 88
+    },
+    {
+      "event": "load_sample",
+      "seconds": 437.422613998,
+      "accepted": 7291,
+      "processed": 7182,
+      "pending": 108
+    },
+    {
+      "event": "load_sample",
+      "seconds": 452.48254174299996,
+      "accepted": 7542,
+      "processed": 7455,
+      "pending": 86
+    },
+    {
+      "event": "load_sample",
+      "seconds": 467.559045544,
+      "accepted": 7793,
+      "processed": 7707,
+      "pending": 85
+    },
+    {
+      "event": "load_sample",
+      "seconds": 482.62993229499995,
+      "accepted": 8044,
+      "processed": 7959,
+      "pending": 85
+    },
+    {
+      "event": "load_sample",
+      "seconds": 497.69119436799997,
+      "accepted": 8295,
+      "processed": 8209,
+      "pending": 86
+    },
+    {
+      "event": "load_sample",
+      "seconds": 512.773414807,
+      "accepted": 8546,
+      "processed": 8461,
+      "pending": 85
+    },
+    {
+      "event": "load_sample",
+      "seconds": 527.8371264489999,
+      "accepted": 8798,
+      "processed": 8713,
+      "pending": 84
+    },
+    {
+      "event": "load_sample",
+      "seconds": 542.918614824,
+      "accepted": 9048,
+      "processed": 8961,
+      "pending": 87
+    },
+    {
+      "event": "load_sample",
+      "seconds": 557.990947102,
+      "accepted": 9300,
+      "processed": 9215,
+      "pending": 84
+    },
+    {
+      "event": "load_sample",
+      "seconds": 573.057566399,
+      "accepted": 9551,
+      "processed": 9464,
+      "pending": 86
+    },
+    {
+      "event": "load_sample",
+      "seconds": 588.130709973,
+      "accepted": 9802,
+      "processed": 9718,
+      "pending": 84
+    }
+  ],
+  "applicationRestartCheck": {
+    "passed": true,
+    "patientId": "637c4c70-38ec-43cf-bf05-e467be526bdb-patient-0",
+    "appliedCount": 40,
+    "stateUnchanged": true
+  }
+}
